@@ -1,23 +1,22 @@
-# Longan Nano Examples
+# RISC-V MCU (GD32VF103) Examples for IO-card
 
-The examples in this repository are intended as starting points for some of the different peripherals available on the GD32VF103 chip and the additional hardware on the Longan Nano board. 
+The examples in this repository are intended as starting points for some of the different peripherals available on the GD32VF103 chip and some of the additional hardware on the IO-card used in some courses at KTH. 
 
-To make getting started as easy as possible the examples in general only include the most basic basic settings to make a peripheral work. To go further you will need to either look at the firmware library examples which are much more comprehensive, or reference the manual directly. 
+To make getting started as easy as possible the examples in general only include the most basic settings to make a peripheral work. To go further you will need to either look at the firmware library examples which are much more comprehensive, or reference the manual directly. 
 
 ## Using the examples
 
-All of the code that's different between the projects is inside the **src/app.c** file. All of the projects has an individual README.md which explains the program.
+The main program is located in **src/app.c**. Any external library used will be in **lib/[library name]**.
 
 ### Opening
 
 Use PlatformIO to open a project, just open the PIO home page, then press open project and navigate to one of the example directories.
 
-Since all of the project contains the same libraries except for the app.c file it's no problem to mix and match code from different examples.
+If you want to mix two projects make sure to bring along any neccessary libraries.
 
 ### Programming
 
-By default the projects are confgured to be programmed using an RV-link (if you have two Longan Nano you can make one into an RV-link by programming it using this guide).
-
+By default the projects are confgured to be programmed using dfu.
 If you want to use some other method for programming you can change the **platform.ini** file to your prefered programming method.
 
 ## Acknowledgements
