@@ -3,15 +3,17 @@
 # ADC Example
 
 
-This project demonstrates how to make a basic configuration of the internal ADC. To get the analog signal for the ADC a potentiometer can be connected to the longan nano in the following manner.
+This project demonstrates how to make a basic configuration of the internal ADC. To get the analog signal for the ADC a potentiometer can be connected to the card in the following manner.
 
 Potentiometer:
 - Pin1 <---> VCC
 - Pin2 <---> A4
 - Pin3 <---> GND
 
-The program lets the potentiometer act like a "dimmer" for the red LED on the longa board.
-It measures the analog voltage on pin A3 and generates a PWM signal with a duty cycle based on the voltage measured.
+There is also a header next to the headphone jack which you can slot a potentiometer into. Just make sure to disconnect the ADC-jumper marked JP2 first. You could also try to connect a (4-pole) headset into the headphone jack and use the microphone as the input. For that JP2 should stay connected.
+
+The program lets the potentiometer act like a "dimmer" for the B0 LED.
+It measures the analog voltage on pin A3 and generates a software PWM signal with a duty cycle based on the voltage measured. Keep in mind that there are better ways to generate a PWM signal on the MCU using dedicated hardware, this is just for demonstration.
 
 All the needed code in this project is available in the **app.c** file. All of the code related to configuring the ADC is located in
 

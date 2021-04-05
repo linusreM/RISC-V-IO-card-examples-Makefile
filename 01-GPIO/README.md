@@ -9,9 +9,9 @@ with internal pull-ups enabled.
 
 The functions can be used for simple digital control of for example LEDs and to read the state of buttons.
 
-The example code itself checks the pins A3 and A4 and blinks the red and green leds according to if they are connected to ground or not.
+The example code itself checks the pins A5, A6 and A7 and blinks the three LEDs connected to B0, B1, and B2 according to if the corresponding switch is on or off.
 
-All the needed code in this project is available in the **app.c** file.
+All the needed code in this project is available in the **app.c** file. (Except for API functions)
 <br><br>
 
 ## Functions Used

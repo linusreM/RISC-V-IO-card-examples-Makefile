@@ -3,7 +3,7 @@
 # LCD Example
 
 
-This project shows how to start and use the LCD-display included on the longan nano. It includes how to draw some basic shapes, an image and how to use the graph-utility.
+This project shows how to use the LCD-display on the IO-card. It includes how to draw some basic shapes, an image and how to use the graph-utility.
 
 
 

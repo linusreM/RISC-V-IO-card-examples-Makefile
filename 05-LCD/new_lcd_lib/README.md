@@ -3,71 +3,7 @@
 # LCD Example
 
 
-This project shows how to start and use the LCD-display included on the longan nano. It includes how to draw some basic shapes, an image and how to use the graph-utility.
-
-
-
-## Note
-
-The LCD library uses some shorthand types for the basic integers so:
-```c
-u8 == uint8_t
-u16 == uint16_t
-```
-
-and so on. It also uses some slightly inconsistent capitalization, so keep that in mind if a function won't compile properly. 
-<br><br>
-## Important Functions Used
-### LCD Iitialization
-```c
-void Lcd_Init(void)
-```
-This function initializes the SPI peripheral used for the LCD on the longan board. If using another board this function might need to be edited somewhat to work properly.
-<br><br>
-### LCD Drawing functions
-
-```c
-void LCD_Clear(u16 Color)
-```
-Use this to set the entire screen to a single color.
-
-```c
-void LCD_ShowStr(u16 x,u16 y,const u8 *p,u16 color, u8 mode)
-```
-This functions lets you print a string to the LCD. The first two arguments are the upper left corner coordinates of the string. After the coordinates is a pointer to the string. **color** sets the color of the text. **mode** can be TRANSPARENT or OPAQUE. Transparent will only draw the letter, while opaque will use the global variable **BACK_COLOR** to also fill in the area behind the letter.
-
-```c
-void LCD_DrawPoint(u16 x,u16 y,u16 color)
-
-void LCD_DrawPoint_big(u16 x,u16 y,u16 color)
-
-void LCD_DrawRectangle(u16 x1, u16 y1, u16 x2, u16 y2,u16 color)
-
-void LCD_Fill(u16 xsta,u16 ysta,u16 xend,u16 yend,u16 color)
-
-void Draw_Circle(u16 x0,u16 y0,u8 r,u16 color)
-
-void LCD_DrawLine(u16 x1,u16 y1,u16 x2,u16 y2,u16 color)
-
-void LCD_ShowStr(u16 x,u16 y,const u8 *p,u16 color, u8 mode)
-
-void LCD_ShowNum(u16 x,u16 y,u16 num,u8 len,u16 color)
-
-void LCD_ShowNum1(u16 x,u16 y,float num,u8 len,u16 color)
-```
-
-All of these functions work on the same basic principle. Takes one or two x-y coordinates and displays the selected drawing.
-
-```c
-void LCD_ShowPicture(u16 x1, u16 y1, u16 x2, u16 y2, u8 *image)
-```
-This function takes a pointer to an array of bytedata encoded as RGB565. This could be generated in your program, but probably it's more useful to generate the code for a picture instead.
-
-[littlevgl](https://littlevgl.com/image-to-c-array) has a useful converter that will take an image and convert it to a c-style array. when you have converted an image copy the array which is generated under the line:
-```c
-#if LV_COLOR_DEPTH == 16 && LV_COLOR_16_SWAP != 0
-```
-copy until #endif shows up. Then initiate a **const uint8_t array[]** with the copied values in a .h file that you include in the main file.
+This project shows an alternate LCD driver which for example implements a printf equivalent. Documentation in this page is incomplete, but check the app.c file for some functions, and the lio_lcd.h file in /lib/lcd/include/ for function documentation.
 
 ### Graph Objects
 

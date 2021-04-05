@@ -4,7 +4,7 @@
 
 <br>
 
-This project shows how to create a PWM signal on GD32V. A timer is used to generate the period and the counter for the PWM signal. The example will generate a PWM triangle wave on the green LED on the longan board.
+This project shows how to create a PWM signal on GD32V. A timer is used to generate the period and the counter for the PWM signal. The example will generate a PWM triangle wave on the A0 LED (located on bottom left of the LCD) on the IO-card.
 The example uses a frequency of 13.5KHz, but this can be configured to suit most needs. Two settings affect the frequency of the PWM signal, the prescaler and the period. the frequency can be calculated from:
     <br><br> **frequency** = **core clock** / **(prescaler * period)**<br><br>
 The period also sets the resolution of the duty cycle. For example if you want to create a 50Hz signal with as high resolution as possible
