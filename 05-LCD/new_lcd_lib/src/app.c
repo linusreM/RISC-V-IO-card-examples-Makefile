@@ -2,6 +2,8 @@
 #include "delay.h"
 
 /* This contains most of the LCD functions */
+/* Intended as a slight upgrade from the older LCD library. */
+/* In this form it is blocking, but could be rather easily modified to be non-blocking aswell */
 #include "lio_lcd.h"
 
 /* This contains higher level graphical functions
