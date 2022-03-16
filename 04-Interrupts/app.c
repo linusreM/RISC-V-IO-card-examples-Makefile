@@ -24,7 +24,7 @@ int main(void)
 {
     /* This example sets up both a timer interrupt which goes off each millisecond, and
        one interrupt which uses a GPIO pin as it's trigger. The timer interrupt counts milliseconds
-       and toggles the blue LED each second (1000ms) and the GPIO interrupt toggles the red LED each
+       and toggles LED0 each second (1000ms) and the GPIO interrupt toggles LED1 each
        time the pin is connected to 0V(GND) */
 
     /* GPIO LED initialization */
@@ -113,11 +113,11 @@ void TIMER1_IRQHandler(void)
     if(SET == timer_interrupt_flag_get(TIMER1, TIMER_INT_CH0)){
 
         millis++; //Add one each time an interrupt happens
-        //gpio_bit_write(GREEN_LED_PORT, GREEN_LED_PIN, !gpio_output_bit_get(GREEN_LED_PORT, GREEN_LED_PIN));
+        
 
-        /* Every second toggle the green LED */
+        /* Every second toggle LED0 */
         if(millis % 1000 == 0){
-            /* Toggle green LED */
+            /* Toggle LED0 */
             gpio_bit_write(LED0_PORT, LED0_PIN, !gpio_output_bit_get(LED0_PORT, LED0_PIN));
         }
 
@@ -159,7 +159,7 @@ void EXTI5_9_IRQHandler(void){
 
         /* Check that gpio is still low, otherwise we assume it's just contact bounce */
         if(!gpio_input_bit_get(GPIOA, GPIO_PIN_5)){
-            /* Toggle red LED */
+            /* Toggle LED1 */
             gpio_bit_write(LED1_PORT, LED1_PIN, !gpio_output_bit_get(LED1_PORT, LED1_PIN));
         } 
 
