@@ -10,14 +10,15 @@ The main program is located in **src/app.c**. Any external library used will be 
 
 ### Opening
 
-Use PlatformIO to open a project, just open the PIO home page, then press open project and navigate to one of the example directories.
+Transfer the source files into a new project from the template (provided in your courseware) and you should be set.
+
+You need a working toolchain which includes the libraries found in [GD32VF103 Firmware Library Examples](https://github.com/riscv-mcu/GD32VF103_Firmware_Library).
 
 If you want to mix two projects make sure to bring along any neccessary libraries.
 
 ### Programming
 
-By default the projects are confgured to be programmed using dfu.
-If you want to use some other method for programming you can change the **platform.ini** file to your prefered programming method.
+Use **make dfu** after putting the board into bootloader mode by pressing reset+boot, then releasing reset, and last releasing boot.
 
 ## Acknowledgements
 
